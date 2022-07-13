@@ -36,38 +36,6 @@ const Login = () => {
             </form>
         </div>
     );
-
-    /*const onLogin = (e) => {
-        e.preventDefault();
-
-        const formData = Object.fromEntries(new FormData(e.currentTarget));
-        console.log(formData);
-    }
-
-    return (
-        <div className={styles.styles.center}>
-            <h1>Login</h1>
-
-            <form onSubmit={onLogin} method="POST">
-                <div className={styles.styles.txt_field}>
-                    <input type="text" name="email" />
-                    <label>Email</label>
-                </div>
-
-                <div className={styles.styles.txt_field}>
-                    <input type="password" name="password" />
-                    <label>Password</label>
-                </div>
-
-                <input type="submit" value="Login" />
-
-                <div className={styles.styles.signup_link}>
-                    Not a member? <Link to="/register"> Sign up </Link>
-                </div>
-            </form>
-        </div>
-    );
-    */
 }
 
 export default Login;
