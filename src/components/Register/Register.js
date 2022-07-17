@@ -1,12 +1,15 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 
 import styles from './Register.module.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import * as authService from '../../services/authService';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
     const [errors, setErrors] = useState([]);
+    const { login } = useAuthContext();
+    const navigate = useNavigate();
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();
@@ -16,19 +19,26 @@ const Register = () => {
 
         authService.register(email, password, repass)
             .then(res => {
-                if (res.length > 0){
+                if (res.length > 0) {
                     setErrors(res);
                 } else {
+                    login(res);
                     setErrors([]);
+                    navigate('/');
                 }
             });
+    }
+
+    const index = () => {
+        return Math.random().toString(36).replace(/[^a-z]+/g, '').substring(0, 5);
     }
 
     return (
         <Fragment>
             <div className={styles["errorContainer"]}>
-                {errors.map((e, index) => <p key={index}>{e.msg}</p>)}
+                {errors.map((e) => <p key={index()}>{e.msg}</p>)}
             </div>
+
             <div className={styles.center}>
                 <h1>Register</h1>
                 <form method="POST" onSubmit={registerSubmitHandler}>

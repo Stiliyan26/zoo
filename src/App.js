@@ -6,27 +6,32 @@ import Catalog from "./components/Catalog/Catalog";
 import Details from "./components/Details/Details";
 import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
+import Logout from "./components/Logout/Logout";
 
+import { AuthProvider } from "./contexts/AuthContext";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
     return (
-        <div className="all">
-            <Header />
+        <AuthProvider>
+            <div className="all">
+                <Header />
 
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/catalog" element={<Catalog />} />
-                    <Route path="/details" element={<Details />} />
-                    <Route path="/create" element={<Create />} />
-                    <Route path="/edit" element={<Edit />} />
-                </Routes>
-            </main>
-            
-        </div>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/catalog" element={<Catalog />} />
+                        <Route path="/details" element={<Details />} />
+                        <Route path="/create" element={<Create />} />
+                        <Route path="/edit" element={<Edit />} />
+                        <Route path="/logout" element={<Logout />} />
+                    </Routes>
+                </main>
+
+            </div>
+        </AuthProvider>
     );
 }
 

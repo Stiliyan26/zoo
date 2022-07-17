@@ -3,16 +3,27 @@ const User = require('../models/User');
 
 const mapErrors = require('../util/mapErrors');
 
-const { registerUser } = require('../services/authServiceBE');
+const { registerUser, loginUser } = require('../services/authServiceBE');
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     User.find({})
-        .then(data => {
+        .then((data) => {
             res.json(data);
         })
         .catch((error) => {
-            console.log('Error: ', error);
+            console.log('Error:', error);
         });
+})
+
+router.post('/login', async (req, res) => {
+    try {
+        const user = await loginUser(req.body.email, req.body.password);
+
+        res.json(user);
+    } catch (err) {
+        const errors = mapErrors(err);
+        res.json(errors);
+    }
 });
 
 router.post('/register', async (req, res) => {

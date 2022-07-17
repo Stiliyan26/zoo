@@ -17,11 +17,26 @@ async function registerUser(email, password) {
     return user;
 }
 
+async function loginUser(email, password) {
+    const user = await getUserByEmail(email);
+    
+    if (!user) {
+        throw new Error('User does not exist!');
+    }
+
+    if (password.trim() != user.password.trim()){
+        throw new Error('Email or Password is inccorect!');
+    }
+    
+    return user;
+}
+
 async function getUserByEmail(email) {
     return await User.findOne({ email: new RegExp(`^${email}$`, 'i') });
 }
 
 module.exports = {
-    registerUser
+    registerUser,
+    loginUser
 }
 
