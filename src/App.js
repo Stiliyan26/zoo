@@ -8,12 +8,10 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 
 import { Route, Routes } from "react-router-dom";
-import './styles/styles.css'
 
 function App() {
     return (
         <div className="all">
-
             <Header />
 
             <main>
@@ -27,6 +25,7 @@ function App() {
                     <Route path="/edit" element={<Edit />} />
                 </Routes>
             </main>
+            
         </div>
     );
 }

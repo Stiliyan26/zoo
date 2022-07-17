@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Details = () => {
     return (
         <section id="details-page" className={styles.details}>
-            <div className={styles['pet-information']}>
+            <div className={styles['animal-information']}>
                 <h3>Name: Milo</h3>
                 <p className={styles.type}>Type: dog</p>
                 <p className={styles.img}>

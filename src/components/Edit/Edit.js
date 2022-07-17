@@ -37,6 +37,9 @@ const Edit = () => {
                 </div>
 
                 <input type="submit" value="Save changes" />
+
+                <div className={styles.signup_link}>
+                </div>
             </form>
         </div>
     );

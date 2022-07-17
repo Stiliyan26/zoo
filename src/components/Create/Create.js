@@ -8,7 +8,7 @@ const Create = () => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        
+
     }
 
     return (
@@ -39,6 +39,9 @@ const Create = () => {
                 </div>
 
                 <input type="submit" value="Create" />
+
+                <div className={styles.signup_link}>
+                </div>
             </form>
         </div>
     );

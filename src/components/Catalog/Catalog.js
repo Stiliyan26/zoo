@@ -55,6 +55,66 @@ const Catalog = () => {
                     </div>
                 </div>
 
+                <div className={styles.card}>
+                    <div className={styles['product-image']}>
+                        <img src="/images/animals/lion.jpg" />
+                    </div>
+
+                    <div className={styles['product-info']}>
+                        <h4>Animal: Lion</h4>
+                        <h4>Weight: 210kg</h4>
+                    </div>
+
+                    <div className={styles.btn}>
+                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
+                    </div>
+                </div>
+
+                <div className={styles.card}>
+                    <div className={styles['product-image']}>
+                        <img src="/images/animals/lion.jpg" />
+                    </div>
+
+                    <div className={styles['product-info']}>
+                        <h4>Animal: Lion</h4>
+                        <h4>Weight: 210kg</h4>
+                    </div>
+
+                    <div className={styles.btn}>
+                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
+                    </div>
+                </div>
+
+                <div className={styles.card}>
+                    <div className={styles['product-image']}>
+                        <img src="/images/animals/lion.jpg" />
+                    </div>
+
+                    <div className={styles['product-info']}>
+                        <h4>Animal: Lion</h4>
+                        <h4>Weight: 210kg</h4>
+                    </div>
+
+                    <div className={styles.btn}>
+                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
+                    </div>
+                </div>  
+
+                <div className={styles.card}>
+                    <div className={styles['product-image']}>
+                        <img src="/images/animals/lion.jpg" />
+                    </div>
+
+                    <div className={styles['product-info']}>
+                        <h4>Animal: Lion</h4>
+                        <h4>Weight: 210kg</h4>
+                    </div>
+
+                    <div className={styles.btn}>
+                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
+                    </div>
+                </div>  
+
             </div>
         </Fragment>
     )
