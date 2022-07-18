@@ -10,7 +10,7 @@ const useLocalStorage = (key, initialValue) => {
                 : initialValue;
         } catch (err) {
             console.log(err);
-            return initialValue
+            return initialValue;
         }
     })
 

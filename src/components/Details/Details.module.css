@@ -45,9 +45,8 @@ p.total-likes {
     padding: 0rem;
 }
 
-img .special {
+.special {
     display: block;
-    position: absolute;
     left: 0;
     right: 0;
     width: 100%;
@@ -56,7 +55,7 @@ img .special {
 }
 
 
-img.hearts {
+.hearts {
     width: 33px;
     height: 30px;
     position: relative;

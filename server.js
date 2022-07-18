@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const path = require('path');
 
 const authController = require('./backend/controllers/auth');
+const animalController = require('./backend/controllers/animal');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -23,5 +24,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/users', authController);
+app.use('/animals', animalController);
 
 app.listen(PORT, console.log(`Server is starting on port: http://localhost:${PORT}`));

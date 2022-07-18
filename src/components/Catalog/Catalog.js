@@ -1,121 +1,40 @@
 import styles from './Catalog.module.css';
+import AnimalCard from './AnimalCard';
 
 import { Fragment } from 'react';
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import * as animalService from '../../services/animalService';
 
 const Catalog = () => {
+    const [loading, setLoading] = useState(false);
+    const [animals, setAnimals] = useState([]);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            animalService.getAllAnimals()
+                .then((res) => {
+                    setAnimals(res);
+                    setLoading(false);
+                });
+        }, 500);
+    }, []);
+
+    const content = animals.length != 0
+        ? (
+            <div className={styles.container}>
+                {animals.map(animal => <AnimalCard key={animal._id} animal={animal} />)}
+            </div>
+        )
+        : <h3 className={styles['no-articles']}>No articles yet</h3>
+
     return (
         <Fragment>
             <h1 className={styles.catalog}>Catalog</h1>
-
-            <div className={styles.container}>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/monkey.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Anial: Monkey</h4>
-                        <h4>Weight: 70kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/tiger.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Tiger</h4>
-                        <h4>Weight: 200kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/lion.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Lion</h4>
-                        <h4>Weight: 210kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/lion.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Lion</h4>
-                        <h4>Weight: 210kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/lion.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Lion</h4>
-                        <h4>Weight: 210kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/lion.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Lion</h4>
-                        <h4>Weight: 210kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>  
-
-                <div className={styles.card}>
-                    <div className={styles['product-image']}>
-                        <img src="/images/animals/lion.jpg" />
-                    </div>
-
-                    <div className={styles['product-info']}>
-                        <h4>Animal: Lion</h4>
-                        <h4>Weight: 210kg</h4>
-                    </div>
-
-                    <div className={styles.btn}>
-                        <Link to="/details"><button type="button"><h2>Details</h2></button></Link>
-                    </div>
-                </div>  
-
-            </div>
+            {loading
+                ? <h1 className={styles.loading}>Loading...</h1>
+                : content
+            }
         </Fragment>
     )
 }
