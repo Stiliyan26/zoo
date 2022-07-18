@@ -1,9 +1,8 @@
+import styles from './Create.module.css';
+
 import { useNavigate } from "react-router-dom";
 import { useState, Fragment } from "react";
-
 import { useAuthContext } from "../../contexts/AuthContext";
-
-import styles from './Create.module.css';
 import * as animalService from '../../services/animalService';
 
 const Create = () => {
@@ -43,24 +42,24 @@ const Create = () => {
                 <h1>Create</h1>
                 <form method="POST" onSubmit={createSubmitHandler}>
                     <div className={styles.txt_field}>
-                        <input type="text" name="name" />
+                        <input type="text" name="name" placeholder="Type animal name..." />
                         <span></span>
                         <label>Name</label>
                     </div>
                     <div className={styles.txt_field}>
-                        <input type="text" name="animal" />
+                        <input type="text" name="animal" placeholder="Type animal type..."/>
                         <span></span>
                         <label>Animal</label>
                     </div>
 
                     <div className={styles.txt_field}>
-                        <input type="text" name="description" />
+                        <input type="text" name="description" placeholder="Type description of the animal..."/>
                         <span></span>
                         <label>Description</label>
                     </div>
 
                     <div className={styles.txt_field}>
-                        <input type="text" name="image" />
+                        <input type="text" name="image" placeholder="/images/animals/..."/>
                         <span></span>
                         <label>Image</label>
                     </div>

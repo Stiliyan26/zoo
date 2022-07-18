@@ -43,17 +43,17 @@ const Register = () => {
                 <h1>Register</h1>
                 <form method="POST" onSubmit={registerSubmitHandler}>
                     <div className={styles.txt_field}>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" placeholder='Type yuor email...'/>
                         <span></span>
                         <label>Email</label>
                     </div>
                     <div className={styles.txt_field}>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" placeholder='Type your password...'/>
                         <span></span>
                         <label>Password</label>
                     </div>
                     <div className={styles.txt_field}>
-                        <input type="password" name="repass" />
+                        <input type="password" name="repass" placeholder='Repeat your password...'/>
                         <span></span>
                         <label>Repeat Password</label>
                     </div>

@@ -9,7 +9,7 @@ const getAllAnimals = async () => {
 const getAnimalById = async (animalId) => {
     const animal = await Animal.findById(animalId).lean();
 
-    return animal; 
+    return await animal;
 }
 
 const createAnimal = async (animalData) => {
@@ -18,8 +18,20 @@ const createAnimal = async (animalData) => {
     return await newAnimal.save();
 }
 
+const updateAnimal = async (animalId, animalData) => {
+    const existing = await Animal.findById(animalId);
+
+    existing.name = animalData.name;
+    existing.animal = animalData.animal;
+    existing.description = animalData.description;
+    existing.image = animalData.image;
+
+    return await existing.save();
+}
+
 module.exports = {
     getAllAnimals,
     createAnimal,
-    getAnimalById
+    getAnimalById,
+    updateAnimal
 }

@@ -42,12 +42,12 @@ const Login = () => {
                 <h1>Login</h1>
                 <form onSubmit={loginSubmitHandler} method="POST">
                     <div className={styles.txt_field}>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" placeholder='Type your email...'/>
                         <span></span>
                         <label>Email</label>
                     </div>
                     <div className={styles.txt_field}>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" placeholder='Type your password...' />
                         <span></span>
                         <label>Password</label>
                     </div>

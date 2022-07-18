@@ -20,7 +20,7 @@ const Details = () => {
 
     const ownerButtons = (
         <Fragment>
-            <Link className={styles.button} to="/edit">Edit</Link>
+            <Link className={styles.button} to={`/edit/${animalId}`}>Edit</Link>
             <Link className={styles.button} to="/delete">Delete</Link>
         </Fragment>
     )

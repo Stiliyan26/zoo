@@ -8,7 +8,6 @@ export const createAnimal = async (animalData) => {
         },
         body: JSON.stringify(animalData)
     });
-
     const data = await res.json();
 
     return data;
@@ -21,8 +20,21 @@ export const getAllAnimals = async () => {
     return data;
 }
 
-export const getAnimalById = async (animalID) => {
-    const res = await fetch(`${baseUrl}/details/${animalID}`);
+export const getAnimalById = async (animalId) => {
+    const res = await fetch(`${baseUrl}/details/${animalId}`);
+    const data = await res.json();
+
+    return data;
+}
+
+export const updateAnimal = async (animalData, animalId, userId) => {
+    const res = await fetch(`${baseUrl}/edit/${animalId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({...animalData, userId})
+    });
     const data = await res.json();
 
     return data;

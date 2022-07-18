@@ -32,6 +32,7 @@ form .txt_field {
   padding: 0 5px;
   height: 40px;
   font-size: 16px;
+  color: rgb(223, 222, 222);
   border: none;
   background: none;
   outline: none;
@@ -44,6 +45,7 @@ form .txt_field {
   color: rgb(223, 222, 222);
   transform: translateY(-50%);
   font-size: 16px;
+  font-weight: bold;
   pointer-events: none;
   transition: .5s;
 }
@@ -110,4 +112,43 @@ input[type="submit"]:hover {
 }
 .signup_link a:hover{
   text-decoration: underline;
+}
+
+.errorContainer {
+  position: fixed;
+  right: 100px;
+  min-width: 100px;
+  display: block;
+  z-index: 11111;
+  top: 100px;
+  text-align: center;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  height: auto;
+  width: 320px;
+  box-shadow: 0 5px 10px rgb(128, 14, 209);
+}
+
+.errorContainer>p {
+  background: rgb(30, 30, 211);
+  font-size: 20px;
+  padding: 20px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.errorContainer {
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+::placeholder {
+  color: rgb(2, 68, 18)
 }
