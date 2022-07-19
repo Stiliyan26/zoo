@@ -1,0 +1,30 @@
+.not-found {
+    width: 100%;
+    height: 320px;
+    margin: 0 auto;
+    margin-top: 15%;
+    text-align: center;
+    box-shadow: 0px 0px 80px 40px rgba(1, 151, 31, 0.315);
+    background-color: rgb(5, 104, 36);
+}
+
+.not-found h1 {
+    font-size: 130px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.not-found h2 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.not-found p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 4px;
+    font-size: 20px;
+}

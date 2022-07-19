@@ -100,7 +100,6 @@ router.put('/likes/:animalId', async (req, res) => {
         if (userId == currentAnimal.ownerId) {
             throw new Error('This user is has no premision to edit this post!');
         }
-        console.log('hello there');
         const animalWithUpdatedLikes = await likeAnimal(animalId, userId);
 
         res.json(animalWithUpdatedLikes);
