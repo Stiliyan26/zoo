@@ -29,11 +29,37 @@ export const getAnimalById = async (animalId) => {
 
 export const updateAnimal = async (animalData, animalId, userId) => {
     const res = await fetch(`${baseUrl}/edit/${animalId}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({...animalData, userId})
+        body: JSON.stringify({ ...animalData, userId })
+    });
+    const data = await res.json();
+
+    return data;
+}
+
+export const deleteAnimal = async (animalId, userId) => {
+    const res = await fetch(`${baseUrl}/delete/${animalId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId })
+    });
+    const data = await res.json();
+
+    return data;
+}
+
+export const likeAnimalById = async (animalId, userId) => {
+    const res = await fetch(`${baseUrl}/likes/${animalId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId })
     });
     const data = await res.json();
 

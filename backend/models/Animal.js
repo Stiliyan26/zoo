@@ -6,8 +6,7 @@ const animalSchema = new Schema({
     description: { type: String, required: true },
     image: { type: String, required: true },
     ownerId: { type: ObjectId, ref: 'User' },
-    usersLiked: { type: [ObjectId], ref: 'User', default: [] },
-    likes: { type: Number, default: 0 }
+    likes: { type: [ObjectId], ref: 'User', default: [] },
 });
 
 const Animal = model('Animal', animalSchema);

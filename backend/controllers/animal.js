@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const mapErrors = require('../util/mapErrors');
-const { createAnimal, getAllAnimals, getAnimalById, updateAnimal } = require('../services/animalServiceBE');
+const { createAnimal, getAllAnimals, getAnimalById, updateAnimal, deleteAnimalById, likeAnimal } = require('../services/animalServiceBE');
 
 router.get('/', async (req, res) => {
     const allAnimals = await getAllAnimals();
@@ -42,7 +42,7 @@ router.post('/create', async (req, res) => {
     }
 });
 
-router.post('/edit/:animalId', async (req, res) => {
+router.put('/edit/:animalId', async (req, res) => {
     const animalId = req.params.animalId;
     const userId = req.body.userId;
 
@@ -55,6 +55,7 @@ router.post('/edit/:animalId', async (req, res) => {
         description: req.body.description,
         image: req.body.image
     }
+    
     try {
         if (userId != currentAnimal.ownerId) {
             throw new Error('This user is has no premision to edit this post!');
@@ -63,7 +64,47 @@ router.post('/edit/:animalId', async (req, res) => {
         const updatedAnimal = await updateAnimal(animalId, animalData);
 
         res.json(updatedAnimal);
-    } catch (err){
+    } catch (err) {
+        const errors = mapErrors(err);
+
+        res.json(errors);
+    }
+});
+
+router.delete('/delete/:animalId', async (req, res) => {
+    const animalId = req.params.animalId;
+    const userId = req.body.userId;
+
+    const currentAnimal = await getAnimalById(animalId);
+
+    try {
+        if (userId != currentAnimal.ownerId) {
+            throw new Error('This user is has no premision to edit this post!');
+        }
+
+        await deleteAnimalById(animalId);
+        res.json('Animal is deleted!');
+    } catch (err) {
+        const errors = mapErrors(err);
+
+        res.json(errors);
+    }
+});
+
+router.put('/likes/:animalId', async (req, res) => {
+    const animalId = req.params.animalId;
+    const userId = req.body.userId;
+    const currentAnimal = await getAnimalById(animalId);
+
+    try {
+        if (userId == currentAnimal.ownerId) {
+            throw new Error('This user is has no premision to edit this post!');
+        }
+        console.log('hello there');
+        const animalWithUpdatedLikes = await likeAnimal(animalId, userId);
+
+        res.json(animalWithUpdatedLikes);
+    } catch (err) {
         const errors = mapErrors(err);
 
         res.json(errors);
