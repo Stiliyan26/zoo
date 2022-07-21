@@ -25,20 +25,23 @@ const Profile = () => {
         }, 500);
     }, [user._id]);
 
+    const noPosts = (
+        <Fragment>
+            <h3 className={styles['no-articles']}>No posts yet.</h3>
+            <h3 className={styles['navigate']}>Create your first post here <Link to="/create">Create Page.</Link></h3>
+        </Fragment>
+    )
+
+    const posts = (
+        <div className={styles.container}>
+            {animals.map(animal => <AnimalCard key={animal._id} animal={animal} />)}
+        </div>
+    )
+
     const content = animals.length !== 0
-        ?
-            (
-                <div className={styles.container}>
-                    {animals.map(animal => <AnimalCard key={animal._id} animal={animal} />)}
-                </div>
-            )
-        :
-            (
-                <Fragment>
-                    <h3 className={styles['no-articles']}>No posts yet.</h3>
-                    <h3 className={styles['navigate']}>Go to <Link to="/create">Create Page.</Link></h3>
-                </Fragment>
-            )
+        ? posts
+        : noPosts
+
 
     return (
         <Fragment>

@@ -106,7 +106,7 @@ router.put('/likes/:animalId', async (req, res) => {
     } catch (err) {
         const errors = mapErrors(err);
 
-        res.json(errors);
+        console.log(errors);
     }
 });
 
@@ -120,7 +120,7 @@ router.post('/profile', async (req, res) => {
     } catch (err) {
         const errors = mapErrors(err);
 
-        res.json(errors);
+        console.log(errors);
     }
 });
 
