@@ -1,0 +1,52 @@
+.card {
+    width: 270px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 5px solid #1c6d11;
+    border-radius: 0px 11px 0px 0px;
+    box-shadow: 0 0 7px rgb(255, 255, 255)
+}
+
+.card .product-image {
+    width: 230px;
+    margin: 20px auto;
+}
+
+.card .product-image img {
+    width: 230px;
+    transform: 0.4s;
+}
+
+.card .product-image img:hover {
+    transform: scale(1.1);
+}
+
+.card .product-image h4 {
+    font-size: 18px;
+    padding: 0 25px;
+    margin-bottom: 10px;
+}
+
+.card .product-info h4 {
+    color: rgb(165, 165, 165);
+    padding: 0% 0% 10% 0%;
+}
+
+.card .btn {
+    width: 100%;
+}
+
+.card .btn button {
+    width: 50%;
+    padding: 10px;
+    background: rgb(20, 220, 110);
+    border: 1px solid gray;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.card .btn button:hover {
+    transform: scale(1.1);
+}

@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const Header = () => {
-    const { isAuthenticated } = useAuthContext();
+    const { isAuthenticated, user } = useAuthContext();
 
     const guestNav = (
         <Fragment>
@@ -17,6 +17,7 @@ const Header = () => {
     const userNav = (
         <Fragment>
             <li><Link to="/create">Create Animal</Link></li>
+            <li><Link to="/profile"> Posts of {user.email}</Link></li>   
             <li><Link to="/logout">Logout</Link></li>
         </Fragment>
     )

@@ -27,3 +27,10 @@ export const login = async (email, password) => {
 
     return data;
 }
+
+export const logout = async () => {
+    const res = await fetch(`${baseUrl}/logout`);
+    const data = await res.json();
+
+    return data;
+}

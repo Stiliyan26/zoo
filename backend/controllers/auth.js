@@ -1,24 +1,27 @@
 const router = require('express').Router();
 const User = require('../models/User');
 
+const { isGuest } = require('../middleware/guards');
+
 const mapErrors = require('../util/mapErrors');
 
-const { registerUser, loginUser } = require('../services/authServiceBE');
+const { registerUser, loginUser, returnAllUsers } = require('../services/authServiceBE');
 
-router.get('/', (req, res) => {
-    User.find({})
+router.get('/', async (req, res) => {
+    returnAllUsers()
         .then((data) => {
             res.json(data);
         })
         .catch((error) => {
             console.log('Error:', error);
-        });
+        });;
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', isGuest(), async (req, res) => {
     try {
         const user = await loginUser(req.body.email, req.body.password);
-        
+        req.session.user = user;
+
         res.json(user);
     } catch (err) {
         const errors = mapErrors(err);
@@ -26,7 +29,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', isGuest(), async (req, res) => {
     try {
         if (req.body.password.trim().length < 3) {
             throw new Error('Password should be at least 3 characters long!');
@@ -36,6 +39,7 @@ router.post('/register', async (req, res) => {
         }
 
         const user = await registerUser(req.body.email, req.body.password);
+        req.session.user = user;
 
         res.json(user);
 
@@ -43,6 +47,12 @@ router.post('/register', async (req, res) => {
         const errors = mapErrors(err);
         res.json(errors);
     }
+});
+
+router.get('/logout', (req, res) => {
+    delete req.session.user;
+
+    res.json('You logged out');
 });
 
 

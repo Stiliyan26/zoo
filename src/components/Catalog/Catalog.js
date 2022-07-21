@@ -1,5 +1,5 @@
 import styles from './Catalog.module.css';
-import AnimalCard from './AnimalCard';
+import AnimalCard from '../AnimalCard/AnimalCard';
 
 import { Fragment } from 'react';
 import { useState, useEffect } from 'react';
@@ -20,13 +20,13 @@ const Catalog = () => {
         }, 500);
     }, []);
 
-    const content = animals.length != 0
+    const content = animals.length !== 0
         ? (
             <div className={styles.container}>
                 {animals.map(animal => <AnimalCard key={animal._id} animal={animal} />)}
             </div>
         )
-        : <h3 className={styles['no-articles']}>No articles yet</h3>
+        : <h3 className={styles['no-articles']}>No posts yet</h3>
 
     return (
         <Fragment>

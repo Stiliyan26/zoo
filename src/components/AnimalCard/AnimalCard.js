@@ -1,4 +1,4 @@
-import styles from './Catalog.module.css';
+import styles from './AnimalCard.module.css';
 import { Link } from "react-router-dom";
 
 const AnimalCard = ({

@@ -34,3 +34,12 @@
     padding: 10px;
     color: rgb(213, 213, 213);
 }
+
+.navigate {
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    width: 50%;
+    padding: 10px;
+    color: rgb(213, 213, 213);
+}

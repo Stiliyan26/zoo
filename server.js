@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const morgan = require('morgan');
 const path = require('path');
 
@@ -19,9 +20,17 @@ mongoose.connect(MONGO_URI || 'mongodb://localhost/zoo', {
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!');
 });
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: 'auto'
+    }
+}));
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 app.use('/users', authController);
 app.use('/animals', animalController);

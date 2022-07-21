@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const mapErrors = require('../util/mapErrors');
-const { createAnimal, getAllAnimals, getAnimalById, updateAnimal, deleteAnimalById, likeAnimal } = require('../services/animalServiceBE');
+const { createAnimal, getAllAnimals, getAnimalById, updateAnimal, deleteAnimalById, likeAnimal, getPostsByOwner } = require('../services/animalServiceBE');
 
 router.get('/', async (req, res) => {
     const allAnimals = await getAllAnimals();
@@ -55,7 +55,7 @@ router.put('/edit/:animalId', async (req, res) => {
         description: req.body.description,
         image: req.body.image
     }
-    
+
     try {
         if (userId != currentAnimal.ownerId) {
             throw new Error('This user is has no premision to edit this post!');
@@ -103,6 +103,20 @@ router.put('/likes/:animalId', async (req, res) => {
         const animalWithUpdatedLikes = await likeAnimal(animalId, userId);
 
         res.json(animalWithUpdatedLikes);
+    } catch (err) {
+        const errors = mapErrors(err);
+
+        res.json(errors);
+    }
+});
+
+router.post('/profile', async (req, res) => {
+    const userId = req.body.userId;
+
+    try {
+        const myPosts = await getPostsByOwner(userId);
+
+        res.json(myPosts);
     } catch (err) {
         const errors = mapErrors(err);
 

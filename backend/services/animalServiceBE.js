@@ -36,7 +36,7 @@ const deleteAnimalById = async (animalId) => {
 const likeAnimal = async (animalId, userId) => {
     const existing = await Animal.findById(animalId);
 
-    if (existing.likes.includes(userId)){
+    if (existing.likes.includes(userId)) {
         throw new Error('This user already liked this post!');
     }
 
@@ -45,11 +45,18 @@ const likeAnimal = async (animalId, userId) => {
     return await existing.save();
 }
 
+const getPostsByOwner = async (userId) => {
+    const myPosts = await Animal.find({ ownerId: userId }).lean();
+
+    return myPosts;
+}
+
 module.exports = {
     getAllAnimals,
     createAnimal,
     getAnimalById,
     updateAnimal,
     deleteAnimalById,
-    likeAnimal
+    likeAnimal,
+    getPostsByOwner
 }

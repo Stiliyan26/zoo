@@ -65,3 +65,18 @@ export const likeAnimalById = async (animalId, userId) => {
 
     return data;
 }
+
+export const getMyPosts = async (userId) => {
+    const res = await fetch(`${baseUrl}/profile`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({userId})
+    });
+    const data = await res.json();
+
+    return data;
+}
+
+

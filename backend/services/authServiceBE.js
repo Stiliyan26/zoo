@@ -1,5 +1,9 @@
 const User = require('../models/User');
 
+async function returnAllUsers() {
+    return await User.find({});
+}
+
 async function registerUser(email, password) {
     const existing = await getUserByEmail(email);
 
@@ -19,15 +23,15 @@ async function registerUser(email, password) {
 
 async function loginUser(email, password) {
     const user = await getUserByEmail(email);
-    
+
     if (!user) {
         throw new Error('User does not exist!');
     }
 
-    if (password.trim() != user.password.trim()){
+    if (password.trim() != user.password.trim()) {
         throw new Error('Email or Password is inccorect!');
     }
-    
+
     return user;
 }
 
@@ -36,6 +40,7 @@ async function getUserByEmail(email) {
 }
 
 module.exports = {
+    returnAllUsers,
     registerUser,
     loginUser
 }
