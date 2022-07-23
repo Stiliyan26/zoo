@@ -1,5 +1,7 @@
 import styles from './Details.module.css';
 
+import ConfirmDialog from '../ConfirmDialog/ConfirmDialog';
+
 import { useAuthContext } from '../../contexts/AuthContext'
 import { Link, useParams, useNavigate } from "react-router-dom";
 import * as animalService from '../../services/animalService';
@@ -12,6 +14,9 @@ const Details = () => {
     const userId = user._id
 
     const [animal, setAnimal] = useState(animalId);
+    const [dialog, setDialog] = useState({
+        isLoading: false
+    });
 
     useEffect(() => {
         animalService.getAnimalById(animalId)
@@ -23,11 +28,26 @@ const Details = () => {
     const deleteClickHandler = (e) => {
         e.preventDefault();
 
-        animalService.deleteAnimal(animalId, userId)
-            .then((res) => {
-                console.log(res);
-                navigate('/catalog');
+        setDialog({
+            isLoading: true
+        })
+    }
+
+    const DialogDeleteHandler = (choosed) => {
+        if (choosed) {
+            animalService.deleteAnimal(animalId, userId)
+                .then((res) => {
+                    console.log(res);
+                    setDialog({
+                        isLoading: false
+                    });
+                    navigate('/catalog');
+                });
+        } else {
+            setDialog({
+                isLoading: false
             });
+        }
     }
 
     const likeClickHanlder = (e) => {
@@ -47,27 +67,29 @@ const Details = () => {
             </Fragment>
         )
 
-    const likeButton = 
-    (
-        <Link className={styles.button} to="#" onClick={likeClickHanlder}>Like</Link>
-    )
+    const likeButton =
+        (
+            <Link className={styles.button} to="#" onClick={likeClickHanlder}>Like</Link>
+        )
 
-    const alreadyLikeButton = 
-    (
-        <Link className={styles.button} to="#">You already liked</Link>
-    )
+    const alreadyLikeButton =
+        (
+            <Link className={styles.button} to="#">You already liked</Link>
+        )
 
     const usersButton = () => {
-        return animal.likes && 
-        (
-            animal.likes.includes(userId)
-                ? alreadyLikeButton
-                : likeButton
-        )
+        return animal.likes &&
+            (
+                animal.likes.includes(userId)
+                    ? alreadyLikeButton
+                    : likeButton
+            )
     }
 
     return (
         <Fragment>
+            {dialog.isLoading && <ConfirmDialog onDialog={DialogDeleteHandler} animal={animal}/>}
+
             <section id="details-page" className={styles.details}>
                 <div className={styles['animal-information']}>
                     <h3>Name: {animal.name}</h3>

@@ -40,7 +40,6 @@ p.total-likes {
 
 .img {
     width: 15rem;
-    position: relative;
     overflow: hidden;
     padding: 0rem;
 }
@@ -58,7 +57,6 @@ p.total-likes {
 .hearts {
     width: 33px;
     height: 30px;
-    position: relative;
     display: inline-block;
 }
 
@@ -98,5 +96,4 @@ div.actions a {
 
 div.actions a:hover {
     transform: scale(1.1);
-
 }
