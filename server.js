@@ -10,7 +10,7 @@ const animalController = require('./backend/controllers/animal');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-const MONGO_URI = 'mongodb+srv://Stiliyan26:stili2002@zoo.w5fpxat.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = "mongodb+srv://Stiliyan26:stili2002@zoo.w5fpxat.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(MONGO_URI || 'mongodb://localhost/zoo', {
     useNewUrlParser: true,
