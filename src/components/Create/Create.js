@@ -22,7 +22,7 @@ const Create = () => {
                 if (res.length > 0) {
                     setErrors(res);
                 } else {
-                    setErrors([]);
+                    setErrors(['a']);
                     navigate('/catalog');
                 }
             });
