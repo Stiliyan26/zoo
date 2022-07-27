@@ -1,0 +1,105 @@
+Lion info {
+Name: Leonardo
+
+Description: 
+ Lions have strong, compact bodies and powerful forelegs, teeth and jaws for pulling down and killing prey. Their coats are yellow-gold, and adult males have shaggy manes that range in color from blond to reddish-brown to black. The length and color of a lion's mane is likely determined by age, genetics and hormones.
+
+image: /images/animals/lion.jpg
+}
+
+Tiger info {
+Name: Alden
+
+Description: 
+The tiger (Panthera tigris) is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates such as deer and wild boar.
+
+image: /images/animals/tiger.jpg
+}
+
+Monkey ingo {
+Name: Anais 
+
+Description: 
+Monkeys are typically smaller than apes and usually have tails, which apes lack. The monkey group doesn't include lemurs, which are another branch of the primate family tree and live in Madagascar. There are a variety of monkeys, spread across the world, with very different lifestyles.
+
+image: /images/animals/monkey.jpg
+}
+
+Elephant info {
+Name: Briar
+
+Description: 
+Elephants are the largest land mammals on earth and have distinctly massive bodies, large ears, and long trunks. They use their trunks to pick up objects, trumpet warnings, greet other elephants, or suck up water for drinking or bathing, among other uses.
+
+image: /images/animals/elephant.jpg
+}
+
+Wolf {
+Name: Harlow
+
+Description:
+Wolves live and hunt in packs of around six to ten animals. They are known to roam large distances, perhaps 12 miles in a single day. These social animals cooperate on their preferred prey—large animals such as deer, elk, and moose. When they are successful, wolves do not eat in moderation.
+
+image: /images/animals/wolf.jpg
+}
+
+Black-panther info {
+Name: Calypso
+
+Description:
+Black panthers have good hearing, extremely good eyesight, and a strong jaw. The black panther is often called 'the ghost of the forest'. It is a smart, stealth-like attacker, its dark coat helps it hide and stalk prey very easily, especially at night.
+
+images: /images/animals/panther.jpg
+}
+
+Cobra {
+Name: Harper
+
+Description:
+Cobras are Elapids, a type of poisonous snake with hollow fangs fixed to the top jaw at the front of the mouth. These snakes cannot hold their fangs down on prey so they inject venom through their fangs, according to the San Diego Zoo. They have an excellent sense of smell and night vision.
+
+image: /images/animals/cobra.jpg
+}
+
+Komodo dragon {
+Name: Jett
+
+Description: 
+Komodo dragons are large lizards with long tails, strong and agile necks, and sturdy limbs. Their tongues are yellow and forked. Adults are an almost-uniform stone color with distinct, large scales, while juveniles may display a more vibrant color and pattern.
+
+images: /images/animals/komodo.jpg
+}
+
+Tasmanian devil {
+Name: Sebastian
+
+Description:
+ Tasmanian Devils are the size of a small dog, weighing 4kg to 14kg, and standing about 30cm tall. Devils have dark brown to black fur (sometimes with a hint of red-brown), with a large white stripe across their breast and the odd spot on their sides.
+
+images: /images/animals/tasman.jpg
+}
+
+Hippopotamus {
+Name: Rufus
+
+Description: Hippos are large semi-aquatic mammals, with a large barrel-shaped body, short legs, a short tail and an enormous head! They have greyish to muddy-brown skin, which fades to a pale pink colour underneath. They are considered the second largest land animal on Earth (first place goes to the elephant!).
+
+image: /images/animals/hipo.jpg
+}
+
+Baloon fish {
+  Name: Magnus
+
+  Descripton: 
+Pufferfish can inflate into a ball shape to evade predators. Also known as blowfish, these clumsy swimmers fill their elastic stomachs with huge amounts of water (and sometimes air) and blow themselves up to several times their normal size. Common Name: Pufferfish. Scientific Name: Tetraodontidae.
+
+ image: /images/animals/baloonFish.jpg 
+}
+
+Salamandar {
+Name: Piper
+
+Description: Salamanders. Salamanders encompass approximately 500 species of amphibians. They typically have slender bodies, short legs, and long tails. Usually found in moist or arid habitats in the northern hemisphere, most salamanders are small, although there are two species that reach up to 5 feet in length.
+
+image: /images/animals/salamandar.jpg
+}
