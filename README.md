@@ -71,6 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Information about the project
 
+Created txt file with information about the animals called animalInfo.txt in public folder
+
 The server is created with mongodb and express.Frameword used react. HTML and CSS are created by me too.
 
 installed libaries for the back-end - concurrently, express, mongoose, morgan, cors
