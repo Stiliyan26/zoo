@@ -69,49 +69,49 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-Information about the project
+### Information about the project
 
-###The server is created with mongodb and express.Frameword used react. HTML and CSS are created by me too.
+The server is created with mongodb and express.Frameword used react. HTML and CSS are created by me too.
 
-###installed libaries for the back-end - concurrently, express, mongoose, morgan, cors
-###installed libaries for the front end - react, react-router-dom
+installed libaries for the back-end - concurrently, express, mongoose, morgan, cors
+installed libaries for the front end - react, react-router-dom
 
-###Navigation bar for non-autauthenticated and autauthenticated users
+Navigation bar for non-autauthenticated and autauthenticated users
 Home and catalog page are visible for all users.
 
-###Navigation bar for non-authenticated users
+Navigation bar for non-authenticated users
 The available pages on the navigation bar for non-authenticated users are register, login.
 
-###Navigation bar for authenticated users
+Navigation bar for authenticated users
 The available pages on the navigation bar for authenticated users are create animal, posts of current user.
 There is a logout link too.
 
-###Register page
+Register page
 For the register page you can't register a user who already has registered and the password and repaet password should be equal or otherwise the error will be displayed on the screen. 
 
-###Login page
+Login page
 For the login page you should login with alrady registered user and enter the correct password or it will display the errors on the screeen.  
 
-###Home page
+Home page
 Home page has button that when it is clicked it navigates you to catalog page.
 
-###Catalog page
+Catalog page
 Catalog page loads all created posts of animals.
 
-###Details page
+Details page
 Only the owner of the publication has premision to edit or delete the post.
 Logged in users has only premision to like the post once. When a post is liked it changes its count of likes.
 Non-logged in users only can see how many likes the post has.
 
-###Create page
+Create page
 The create page is a place where you can create a post about your favorite animal you can give the animal name, type of animal , description and a image.
 When incorrect data is entered errors about the problem are displayed on the screen.
 
-###Edit page
+Edit page
 When you save your changes about the post it will redirect to details page with the edited data
 
-###Delete page
+Delete page
 When you delete your post a confirmation will appear on the sceen asking if you are sure you want to delete the post.
 
-###Posts of current user 
+Posts of current user 
 This page will display only the posts that the user has created.
