@@ -101,4 +101,13 @@ Name: Piper
 
 Description: Salamanders. Salamanders encompass approximately 500 species of amphibians. They typically have slender bodies, short legs, and long tails. Usually found in moist or arid habitats in the northern hemisphere, most salamanders are small, although there are two species that reach up to 5 feet in length.
 
-image: /images/animals/salamandar.jpg }
+image: /images/animals/salamandar.jpg 
+}
+
+Shark {
+  Name: Azula
+
+  Description: Though there are exceptions, sharks typically have a tough skin that is dull gray in colour and is roughened by toothlike scales. They also usually have a muscular, asymmetrical, upturned tail; pointed fins; and a pointed snout extending forward and over a crescentic mouth set with sharp triangular teeth.
+
+  image: /images/animals/shark.jpg 
+}
