@@ -7,7 +7,7 @@ import * as animalService from '../../services/animalService';
 
 const Create = () => {
     const [errors, setErrors] = useState([]);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const { user } = useAuthContext();
 
     const createSubmitHandler = (e) => {

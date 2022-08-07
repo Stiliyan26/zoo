@@ -10,6 +10,7 @@ import Profile from "./components/Profile/Profile";
 import Edit from "./components/Edit/Edit";
 import Logout from "./components/Logout/Logout";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import Footer from "./components/Footer/Footer";
 
 import GuardedRoute from "./components/GuardedRoute/GuardedRoute";
 import GuestRoute from "./components/GuardedRoute/GuestRoute";
@@ -45,6 +46,7 @@ function App() {
                     </Routes>
                 </main>
 
+                <Footer />
             </div>
         </AuthProvider>
     );
