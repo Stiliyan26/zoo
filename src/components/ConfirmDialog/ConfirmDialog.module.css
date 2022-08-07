@@ -17,15 +17,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgb(11, 86, 23);
-    padding: 50px;
+    padding: 20px 20px 0px;
 }
 
 .message {
+    margin-top: 40px;
     color: rgb(200, 200, 200);
 }
 
 .dialog-buttons {
     display: flex;
+    margin-top: 40px;
     align-items: center;
     color: white;
 }
