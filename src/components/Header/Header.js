@@ -27,14 +27,12 @@ const Header = () => {
         : guestNav;
 
     return (
-
         <header>
             <div className={styles.navbar}>
                 <Link to="/"><img src="/images/logo2.png" className={styles.logo} /></Link>
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/catalog">Catalog</Link></li>
-                    {showNavType}
                 </ul>
             </div>
         </header>
